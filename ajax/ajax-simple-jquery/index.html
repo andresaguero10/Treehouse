@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+  <title>AJAX with JavaScript</title>
+<script src="http://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script>
+/*
+
+1. Create an XMLHTTP Request Object
+  var xhr = new XMLHttpRequest();
+
+2. Create a callback function
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState === 4) {
+      
+    }
+  }
+3. Open a request
+  xhr.open('GET', 'data/employees.json');
+
+4. Send the request 
+  xhr.send();
+
+
+PARSING JSON = JSON.parse(xhr.responseText)
+*/
+  function sendAJAX() {
+    $('#ajax').load('sidebar.html');
+    $("#load").hide();
+  }
+  </script>
+</head>
+<body>
+  <div class="grid-container centered">
+    <div class="grid-100">
+      <div class="contained">
+        <div class="grid-100">
+          <div class="heading">
+            <h1>Bring on the AJAX</h1>
+          </div>
+          <button id="load" onclick="sendAJAX()" class="button">Bring it!</button>
+          <ul id="ajax">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

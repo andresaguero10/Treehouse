@@ -1,0 +1,51 @@
+<!-- 1. Create an XMLHTTP Request Object
+2. Create a callback function
+3. Open a request
+4. Send the request 
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+  <title>AJAX with JavaScript</title>
+  <script>
+  	/*STEP 1*/
+ 	var xhr = new XMLHttpRequest();
+ 	/*STEP 2*/
+ 	xhr.onreadystatechange = function() {
+ 		if (xhr.readyState === 4) {
+ 			document.getElementById('ajax').innerHTML = xhr.responseText;
+ 		}
+ 	};
+ 	/*STEP 3*/
+ 	xhr.open('GET', 'sidebar.html');
+ 	/*STEP 4*/
+ 	function sendAJAX() {
+ 	xhr.send();
+ 	document.getElementById('load').style.display = "none";
+	}
+
+  </script>
+</head>
+<body>
+  <div class="grid-container centered">
+    <div class="grid-100">
+      <div class="contained">
+        <div class="grid-100">
+          <div class="heading">
+            <h1>Bring on the AJAX</h1>
+            <button id="load" onclick="sendAJAX()">Bring It </button>
+          </div>
+          <ul id="ajax">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
